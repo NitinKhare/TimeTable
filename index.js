@@ -9,11 +9,8 @@ const PORT = 3000;
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
-    res.status('200').send("hello")
-})
 
-app.get('/generateTimeTable', async (req, res) => {
+app.get('/', async (req, res) => {
     let timeTable = await require('./script').generateClassTimeTable()
     res.render('timeTable',{timeTable})
 })
