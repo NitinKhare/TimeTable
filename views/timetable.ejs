@@ -1,0 +1,27 @@
+<h1>Generated Time Table</h1>
+
+<div class="TimeTable">
+<% timeTable.forEach(function(table){%>
+      <% for(key in table){  %>
+        <h3>Class <%= key %> Time Table<h3>
+            <table>
+                <tr>
+                    <th>--</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                </tr>
+                  <% for(var i =0; i< table[key].length; i++){%>
+                <tr>
+                    <% for(sch in table[key][i]){  %>
+                        <td><%=table[key][i][sch]%> </td>
+                    <% }%>
+                </tr>
+                <%}%>
+            </table>
+        <% }%>
+    <%})%>
+</div>
